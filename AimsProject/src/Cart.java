@@ -29,6 +29,32 @@ public class Cart {
 		} else
 			System.out.println("The cart is almost full");
 	}// them 1 sp vao gio hang
+	public void addDigitalVideoDisc(DigitalVideoDisc disc1, DigitalVideoDisc disc2) {
+		if (qtyOrdered < 20) {
+			itemOrdered[qtyOrdered] = disc1;
+			qtyOrdered++;
+			System.out.println("the disc has been added");
+			if (qtyOrdered < 20) {
+				itemOrdered[qtyOrdered] = disc2;
+				System.out.println("the disc has been added");
+				qtyOrdered++;
+			} else {
+				System.out.println("The cart is almost full");
+			}
+
+		} else
+			System.out.println("The cart is almost full");
+	}// them 2 sp vao gio hang
+	public void addDigitalVideoDisc(DigitalVideoDisc[] dvdArray) {
+		for (DigitalVideoDisc digitalVideoDisc : dvdArray) {
+			if (qtyOrdered < MAX_NUMBERS_ORDERED) {
+				itemOrdered[qtyOrdered] = digitalVideoDisc;
+				System.out.println("the disc [" + digitalVideoDisc.getTitle() + "] has been added");
+				++qtyOrdered;
+			} else
+				System.out.println("The cart is almost full");
+		}
+	}// them 1 day sp vao gio hang
 
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 		int indexToRemove = -1;
