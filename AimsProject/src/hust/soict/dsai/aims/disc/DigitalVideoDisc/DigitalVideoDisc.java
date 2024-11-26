@@ -1,4 +1,4 @@
-package src;
+package hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class DigitalVideoDisc {
 	private String title;
@@ -7,6 +7,8 @@ public class DigitalVideoDisc {
 	private int length;
 	private float cost;
 	private int quantity;
+	private static int nbDigitalVideoDiscs = 0; // class attribute
+	private int id; // instance attribute
 
 	public DigitalVideoDisc() {
 		super();
@@ -112,6 +114,20 @@ public class DigitalVideoDisc {
 	public String toString() {
 		return "DigitalVideoDisc [title=" + title + ", category=" + category + ", director=" + director + ", length="
 				+ length + ", cost=" + cost + ", quantity=" + quantity + "]";
+	}
+
+	public boolean isMatch(String Title) {
+		if (this.title.equals(Title)) {
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean isMatch(int Id) {
+		if (this.id == Id) {
+			return true;
+		} else
+			return false;
 	}
 
 }
