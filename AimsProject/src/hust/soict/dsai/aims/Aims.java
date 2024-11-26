@@ -1,4 +1,7 @@
-package src;
+package hust.soict.dsai.aims;
+
+import hust.soict.dsai.aims.cart.Cart.Cart;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
 
 public class Aims {
 
@@ -12,10 +15,7 @@ public class Aims {
 		CrCart.addDigitalVideoDisc(dvd1);
 		CrCart.addDigitalVideoDisc(dvd3);
 		CrCart.listDvd();
-		System.out.println(CrCart.qtyOrdered);
-		CrCart.removeDigitalVideoDisc(dvd1);
-		System.out.println(CrCart.qtyOrdered);
-		CrCart.listDvd();
+
 // Print total cost of the items in the cart
 
 	}
