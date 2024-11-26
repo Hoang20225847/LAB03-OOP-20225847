@@ -50,7 +50,30 @@ public class Cart {
 		}
 
 	}
-
+public void searchByid(int Id) {
+		System.out.println("- The search by id "+Id+":");
+		boolean check=false;
+		for (int i = 0; i < qtyOrdered; i++) {
+			if(this.itemOrdered[i].isMatch(Id)==true) {
+				check=true;
+				System.out.println(this.itemOrdered[i].toString());
+				break;
+			}
+		}
+		if(check==false) System.out.println("Disc not found");
+	}
+	public void searchByTitle(String Title) {
+		System.out.println("- The search by title ["+Title+"]:");
+		boolean check=false;
+		for (int i = 0; i < qtyOrdered; i++) {
+			if(this.itemOrdered[i].isMatch(Title)==true) {
+				check=true;
+				System.out.println(this.itemOrdered[i].toString());
+				break;
+			}
+		}
+		if(check==false) System.out.println("Disc not found");
+	}
 	public void listDvd() {
 		for (int i = 0; i < qtyOrdered; i++) {
 			System.out.println(itemOrdered[i].toString());// in ra danh sach san pham co trong don hang
