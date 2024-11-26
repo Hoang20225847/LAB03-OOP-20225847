@@ -7,111 +7,92 @@ public class DigitalVideoDisc {
 	private int length;
 	private float cost;
 	private int quantity;
-
+private static int nbDigitalVideoDiscs=0; // class attribute
+	private int id; // instance attribute
 	public DigitalVideoDisc() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public DigitalVideoDisc(String title, String category, float cost, int quantity) {
-		super();
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
-		this.quantity = quantity;
+	public DigitalVideoDisc() {
+		
 	}
-
-	public DigitalVideoDisc(String title, String category, String director, int length, float cost, int quantity) {
-		super();
+	public DigitalVideoDisc(String title) {
+		this.title = title;
+		this.id = ++nbDigitalVideoDiscs; // update class attribute and assign id
+	}
+	public DigitalVideoDisc(String title, String category, float cost) {
 		this.title = title;
 		this.category = category;
-		this.director = director;
-		this.length = length;
 		this.cost = cost;
-		this.quantity = quantity;
+		this.id = ++nbDigitalVideoDiscs; // update class attribute and assign id
 	}
 
 	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-		super();
 		this.title = title;
 		this.category = category;
 		this.director = director;
-		this.length = length;
+		this.length=length;
 		this.cost = cost;
-	}
-
-	public DigitalVideoDisc(String title) {
-		super();
-		this.title = title;
-	}
-
-	public DigitalVideoDisc(String title, String category, float cost) {
-		super();
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
-	}
-
-	public DigitalVideoDisc(String title, String category, String director, float cost) {
-		super();
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.cost = cost;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+		this.id = ++nbDigitalVideoDiscs; // update class attribute and assign id
 	}
 
 	public String getTitle() {
 		return title;
 	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
+	
 	public String getCategory() {
 		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
 	}
 
 	public String getDirector() {
 		return director;
 	}
 
-	public void setDirector(String director) {
-		this.director = director;
-	}
-
 	public int getLength() {
 		return length;
-	}
-
-	public void setLength(int length) {
-		this.length = length;
 	}
 
 	public float getCost() {
 		return cost;
 	}
-
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
 	public void setCost(float cost) {
 		this.cost = cost;
 	}
-
+	
+	public void setDirector(String director) {
+		this.director = director;
+	}
+	
+	public void setLength(int length) {
+		this.length = length;
+	}
+	public boolean isMatch(int Id) {
+		if(this.id==Id) {
+			return true;
+		}
+		else return false;
+	}
+	public boolean isMatch(String Title) {
+		if(this.title.equals(Title)) {
+			return true;
+		}
+		else return false;
+	}
 	@Override
 	public String toString() {
-		return "DigitalVideoDisc [title=" + title + ", category=" + category + ", director=" + director + ", length="
-				+ length + ", cost=" + cost + ", quantity=" + quantity + "]";
+		return this.id + ". DVD - [" + this.title + "] - [" + this.category + "] - [" 
+				+ this.director + "] - [" + this.length + "]: [" + this.cost+ "] $";
 	}
+}
 
 }
