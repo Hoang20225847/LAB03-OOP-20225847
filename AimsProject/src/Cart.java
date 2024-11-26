@@ -50,6 +50,17 @@ public class Cart {
 		}
 
 	}
+	public void print() {
+		System.out.println("***********************CART************************\nOrdered Items:");
+		if(this.qtyOrdered==0) System.out.println("No items in the cart");
+		else {
+			for (int i = 0; i < qtyOrdered; i++) {
+				System.out.println(itemOrdered[i].toString());// in ra danh sach san pham co trong don hang
+			}
+			System.out.println("Total cost: ["+this.totalCost()+"]");
+		}
+		System.out.println("***************************************************");
+	}
 
 	public void listDvd() {
 		for (int i = 0; i < qtyOrdered; i++) {
