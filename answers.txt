@@ -1,0 +1,32 @@
+1. Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case? : Thích phương thức addDigitalVideoDisc cho phép truyền một lượng  tùy ý cho dvd hơn .
+
+2. 
+Câu hỏi: Java là ngôn ngữ lập trình "Pass by Value" hay "Pass by Reference"? 
+Trả lời: Java là ngôn ngữ lập trình "Pass by Value". Trong Java, khi bạn 
+truyền một tham số cho một phương thức, giá trị của tham số được sao 
+chép và truyền vào phương thức. Điều này có nghĩa là nếu bạn thay đổi 
+giá trị của tham số bên trong phương thức, giá trị của biến gọi phương 
+thức không bị ảnh hưởng.
+3.
+ Trả lời 2 câu hỏi (Tiếng Việt) 
+After the call of swap(jungleDVD, cinderellaDVD) why does the 
+title of these two objects still remain? 
+ Trả lời: Sau khi thực hiện phương thức swap(jungleDVD, 
+cinderellaDVD), tiêu đề của hai đối tượng vẫn giữ nguyên vì 
+trong Java, tham số được truyền vào phương thức là giá trị 
+của đối tượng, không phải là tham chiếu đến đối tượng. Khi ta 
+thay đổi giá trị của tham số bên trong phương thức (như việc 
+đổi chỗ giữa o1 và o2), sự thay đổi này không ảnh hưởng đến 
+giá trị của các đối tượng gốc. 
+
+ After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) 
+why is the title of the JungleDVD changed? 
+ Trả lời: Sau khi gọi changeTitle(jungleDVD, 
+cinderellaDVD.getTitle()), tiêu đề của jungleDVD bị thay đổi vì 
+trong phương thức changeTitle, ta thực hiện thay đổi trực tiếp 
+trên đối tượng dvd (được truyền vào phương thức) bằng cách gọi 
+dvd.setTitle(title). Điều này ảnh hưởng trực tiếp đến đối tượng 
+gốc được truyền vào phương thức. 
+4.
+: Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method? 
+nên trả về kiểu String để dễ dàng xử lý ko phức tạp.
